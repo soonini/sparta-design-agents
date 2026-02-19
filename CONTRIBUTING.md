@@ -10,11 +10,9 @@ SPARTA 브랜드 디자인 에이전트 시스템에 기여해 주셔서 감사�
 
 | 폴더 | 내용 | 형식 |
 |------|------|------|
-| `agents/` | 서브에이전트 시스템 프롬프트 | YAML frontmatter + Markdown |
-| `skills/` | 워크플로우 및 도메인 지식 | `.md` 또는 디렉토리 내 `SKILL.md` |
+| `agents/` | SPARTA 디자인 에이전트 시스템 프롬프트 | YAML frontmatter + Markdown |
+| `skills/` | 브랜드 스펙 및 가이드라인 | `.md` 또는 디렉토리 내 `SKILL.md` |
 | `commands/` | 슬래시 커맨드 | YAML frontmatter + Markdown |
-| `rules/` | 항상 로드되는 가이드라인 | Markdown |
-| `hooks/` | 트리거 기반 자동화 | JSON |
 
 ---
 
@@ -101,7 +99,7 @@ git push origin feat/my-contribution
 ### 해야 할 것
 
 - 모든 문서는 한국어로 작성
-- 기존 패턴을 따르기 (에이전트 → `agents/code-reviewer.md` 참고)
+- 기존 패턴을 따르기 (`PLAN.md`의 형식 참조)
 - 제출 전 Claude Code에서 동작 확인
 - 변경 내역을 `CLAUDE.md`에 반영
 

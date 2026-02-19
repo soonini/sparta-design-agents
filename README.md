@@ -8,15 +8,16 @@ SPARTA(팀스파르타/스파르타클럽) 브랜드 가이드라인 PDF를 실�
 
 ## 프로젝트 현황
 
-Phase 1 완료, Phase 2부터 순차 구현 예정. 상세 내용은 [PLAN.md](PLAN.md) 참조.
+전체 Phase 완료. 상세 내용은 [PLAN.md](PLAN.md) 참조.
 
 | Phase | 산출물 | 상태 |
 |-------|--------|------|
 | 1 | `skills/sparta-brand-components/SKILL.md` — 컴포넌트 라이브러리 | **완료** |
-| 2 | `skills/sparta-review-checklist.md` — 검수 체크리스트 | 대기 |
-| 3 | `skills/sparta-design-guideline.md` — 통합 가이드라인 | 대기 |
-| 4 | `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md` | 대기 |
-| 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
+| 2 | `skills/sparta-review-checklist.md` — 검수 체크리스트 | **완료** |
+| 3 | `skills/sparta-design-guideline.md` — 통합 가이드라인 | **완료** |
+| 4 | `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md` | **완료** |
+| 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | **완료** |
+| 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | **완료** |
 
 ---
 
@@ -24,15 +25,27 @@ Phase 1 완료, Phase 2부터 순차 구현 예정. 상세 내용은 [PLAN.md](P
 
 ```
 sparta-design-agents/
-|-- agents/          # SPARTA 디자인 에이전트 (Phase 4)
-|-- skills/
-|   |-- sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (완료)
-|-- commands/        # 슬래시 커맨드 (Phase 5)
-|-- CLAUDE.md        # 프로젝트 지침 및 협업 규칙
-|-- PLAN.md          # 구현 플랜 (팀 공유용)
-|-- HANDOVER.md      # 인수인계서
-|-- README.md
-|-- CONTRIBUTING.md
+├── agents/
+│   ├── sparta-design-creator.md   # 제작 에이전트
+│   └── sparta-design-reviewer.md  # 검수 에이전트
+├── commands/
+│   ├── sparta-design.md     # /sparta-design 제작 커맨드
+│   ├── sparta-review.md     # /sparta-review 검수 커맨드
+│   ├── sparta-feedback.md   # /sparta-feedback 피드백 제출
+│   └── sparta-learn.md      # /sparta-learn 피드백 분석
+├── skills/
+│   ├── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리
+│   ├── sparta-review-checklist.md        # 검수 체크리스트
+│   ├── sparta-design-guideline.md        # 통합 가이드라인
+│   └── sparta-feedback-loop.md           # 피드백 루프 스킬
+├── feedback/
+│   ├── log.jsonl      # 피드백 누적 저장소
+│   └── SUMMARY.md     # 주기적 분석 결과
+├── CLAUDE.md        # 프로젝트 지침 및 협업 규칙
+├── PLAN.md          # 구현 플랜 (팀 공유용)
+├── HANDOVER.md      # 인수인계서
+├── README.md
+└── CONTRIBUTING.md
 ```
 
 ---

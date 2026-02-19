@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 5 완료, Phase 6 대기
+## 현재 상태: Phase 6 완료 — 전체 Phase 완료
 
 ## 완료된 작업
 
@@ -87,7 +87,28 @@
   - 판정 기준 테이블 포함
   - 사용 예시 3가지
 
-## 다음 단계
+### Phase 6: 피드백 루프 완료
+- `skills/sparta-feedback-loop.md` 작성 완료 (~180줄)
+  - 로그 스키마 (log.jsonl): ID 채번, 필드 정의, type별 용도
+  - 피드백 수집: 자동 수집 (검수 완료 시) + 수동 수집 (`/sparta-feedback`)
+  - 피드백 분석: 4가지 핵심 메트릭 (위반 빈도 TOP 5, FAIL 비율 추이, 모호 영역, 미해결 피드백)
+  - 5가지 개선안 유형 (항목 추가/강조/명확화/DO-DON'T 보강/규격 수정)
+  - 검수 체크리스트·에이전트 연계 규칙 (AMBIGUOUS/EXEMPTED/NEW 태그)
+  - 운영 가이드: 해결 처리, 분석 주기, 개선안 반영 절차
+- `commands/sparta-feedback.md` 작성 완료 (~40줄)
+  - YAML frontmatter: description
+  - 8단계 워크플로우: 입력 분석 → 분류 → 작성자 확인 → 위반 매핑 → 태그 → 채번 → 저장 → 확인
+  - 확인 출력 형식 포함
+  - 사용 예시 3가지
+- `commands/sparta-learn.md` 작성 완료 (~35줄)
+  - YAML frontmatter: description
+  - 참조 파일 3개 (피드백 루프 + 체크리스트 + 가이드라인)
+  - 6단계 분석 워크플로우 연동
+  - 사용 예시 3가지
+- `feedback/log.jsonl` 초기 빈 파일 생성
+- `feedback/SUMMARY.md` 초기 템플릿 생성 (누적 통계, TOP 5, 학습 포인트, 개선 이력, 미해결 항목)
+
+## 진행 상황 요약
 
 | 순서 | 산출물 | 상태 |
 |------|--------|------|
@@ -96,14 +117,14 @@
 | Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | **완료** |
 | Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | **완료** |
 | Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | **완료** |
-| Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | 대기 |
+| Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` + `feedback/` | **완료** |
 
-### Phase 6 시작 시 할 일
-1. `PLAN.md`의 Phase 6 섹션 참조 (피드백 루프)
-2. `skills/sparta-feedback-loop.md` — 피드백 수집/분석 규칙, 로그 스키마, 학습 루프 정의
-3. `commands/sparta-feedback.md` — `/sparta-feedback [코멘트]`로 피드백 제출
-4. `commands/sparta-learn.md` — `/sparta-learn`으로 축적 피드백 분석 및 개선 제안
-5. `feedback/` 디렉토리: `log.jsonl` + `SUMMARY.md` 초기 구조 생성
+## 전체 Phase 완료
+
+모든 계획된 Phase(1~6)가 완료되었습니다. 향후 가능한 작업:
+- 실제 제작/검수 테스트 (제작 에이전트로 배너 생성 → 검수 에이전트로 검증)
+- 피드백 루프 실전 운영 (피드백 축적 후 `/sparta-learn`으로 분석)
+- 가이드라인/체크리스트 개선 (피드백 기반)
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 

@@ -4,7 +4,21 @@
 
 SPARTA(팀스파르타/스파르타클럽) 브랜드 가이드라인 기반의 디자인 제작 및 검수 에이전트 시스템. 범용 Claude Code 설정(에이전트, 스킬, 훅, 커맨드, 규칙)과 SPARTA 브랜드 전용 에이전트를 함께 제공합니다.
 
-> 원본: [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) 기반
+> 범용 설정 원본: [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)
+
+---
+
+## 프로젝트 현황
+
+구현 플랜 수립 완료, Phase 1부터 순차 구현 예정. 상세 내용은 [PLAN.md](PLAN.md) 참조.
+
+| Phase | 산출물 | 상태 |
+|-------|--------|------|
+| 1 | 컴포넌트 라이브러리 (스킬) | 대기 |
+| 2 | 검수 체크리스트 (스킬) | 대기 |
+| 3 | 통합 가이드라인 (스킬) | 대기 |
+| 4 | 제작/검수 에이전트 | 대기 |
+| 5 | 슬래시 커맨드 | 대기 |
 
 ---
 
@@ -55,6 +69,8 @@ sparta-design-agents/
 |   |-- hooks.json          # PreToolUse, PostToolUse, Stop 훅
 |
 |-- CLAUDE.md         # 프로젝트 지침 및 협업 규칙
+|-- PLAN.md           # 구현 플랜 (팀 공유용)
+|-- HANDOVER.md       # 인수인계서
 |-- README.md
 |-- CONTRIBUTING.md
 ```
@@ -63,22 +79,33 @@ sparta-design-agents/
 
 ## 빠른 시작
 
-### 1. 설치
+### 1. 클론
 
 ```bash
 git clone https://github.com/soonini/sparta-design-agents.git
 cd sparta-design-agents
+```
 
-# Claude 설정에 복사
+### 2. Claude Code 설정에 복사
+
+```bash
 cp agents/*.md ~/.claude/agents/
 cp rules/*.md ~/.claude/rules/
 cp commands/*.md ~/.claude/commands/
 cp -r skills/* ~/.claude/skills/
 ```
 
-### 2. hooks 설정
+### 3. hooks 설정
 
 `hooks/hooks.json`의 훅을 `~/.claude/settings.json`에 병합하세요.
+
+### 4. 브랜드 PDF 원본
+
+SPARTA 브랜드 가이드라인 PDF 2종이 필요합니다 (용량 문제로 Git에 포함하지 않음):
+- `SPARTA_Brand_Basic_Guide_V.1.0_compressed.pdf`
+- `SPARTA_Brand_Application_Guide_V.1.0_compressed.pdf`
+
+프로젝트 루트에 배치하면 에이전트가 참조합니다.
 
 ---
 

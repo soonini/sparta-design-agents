@@ -12,14 +12,33 @@ secrets.json
 .DS_Store
 Thumbs.db
 
-# Editor files
+# Editor / IDE files
 .idea/
 .vscode/
+.cursor/
+.trae/
+.windsurf/
 *.swp
 *.swo
 
+# Claude Code local settings (user-specific permissions)
+.claude/
+
+# Claude Code marketplace skills (installed via skill commands)
+.agent/
+.agents/
+skills/brand-guidelines
+skills/create-design-system-rules
+skills/design-system-patterns
+
+# MCP Jam
+.mcpjam/
+
 # Node
 node_modules/
+
+# Large binary assets (PDF 원본은 별도 공유)
+*.pdf
 
 # Personal configs (if any)
 personal/

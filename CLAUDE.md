@@ -11,12 +11,14 @@ PDF 브랜드 가이드라인을 실무 수준의 상세 스펙으로 변환하�
 
 ```
 sparta-design-agents/
-├── agents/       # 서브에이전트 (YAML frontmatter + 시스템 프롬프트)
-├── skills/       # 워크플로우 및 도메인 지식 (.md 또는 디렉토리/SKILL.md)
-├── commands/     # 슬래시 커맨드 (YAML frontmatter + 지시사항)
-├── rules/        # 항상 로드되는 가이드라인
-├── hooks/        # hooks.json (PreToolUse, PostToolUse, Stop)
-├── CLAUDE.md     # 이 파일
+├── agents/          # 서브에이전트 (YAML frontmatter + 시스템 프롬프트)
+├── skills/          # 워크플로우 및 도메인 지식 (.md 또는 디렉토리/SKILL.md)
+├── commands/        # 슬래시 커맨드 (YAML frontmatter + 지시사항)
+├── rules/           # 항상 로드되는 가이드라인
+├── hooks/           # hooks.json (PreToolUse, PostToolUse, Stop)
+├── CLAUDE.md        # 이 파일
+├── PLAN.md          # 구현 플랜 (팀 공유용)
+├── HANDOVER.md      # 인수인계서
 ├── README.md
 └── CONTRIBUTING.md
 ```
@@ -58,6 +60,8 @@ sparta-design-agents/
 - [x] 프로젝트 정리: 불필요한 파일 제거 (examples, plugins, mcp-configs, clickhouse-io, project-guidelines-example, 이미지)
 - [x] 프로젝트명 변경: everything-claude-code → sparta-design-agents
 - [x] README.md, CLAUDE.md 업데이트
+- [x] 구현 플랜 수립 및 PLAN.md 작성
+- [x] 프로젝트 문서/구조 정비 (.gitignore, CONTRIBUTING.md, HANDOVER.md 갱신)
 
 ### 다음 단계 (SPARTA 브랜드 시스템)
 - [ ] Phase 1: `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리)

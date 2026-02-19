@@ -1,88 +1,38 @@
-# Everything Claude Code에 기여하기
+# 기여 가이드
 
-기여해 주셔서 감사합니다. 이 저장소는 Claude Code 사용자를 위한 커뮤니티 리소스입니다.
+SPARTA 브랜드 디자인 에이전트 시스템에 기여해 주셔서 감사합니다.
 
-## 찾고 있는 기여
+---
 
-### 에이전트
+## 저장소 구조 이해
 
-특정 작업을 잘 처리하는 새로운 에이전트:
-- 언어별 리뷰어 (Python, Go, Rust)
-- 프레임워크 전문가 (Django, Rails, Laravel, Spring)
-- DevOps 전문가 (Kubernetes, Terraform, CI/CD)
-- 도메인 전문가 (ML 파이프라인, 데이터 엔지니어링, 모바일)
+이 저장소는 애플리케이션 코드가 없는 **문서/설정 전용 레포**입니다.
 
-### 스킬
-
-워크플로우 정의 및 도메인 지식:
-- 언어 모범 사례
-- 프레임워크 패턴
-- 테스트 전략
-- 아키텍처 가이드
-- 도메인별 지식
-
-### 커맨드
-
-유용한 워크플로우를 호출하는 슬래시 커맨드:
-- 배포 커맨드
-- 테스트 커맨드
-- 문서화 커맨드
-- 코드 생성 커맨드
-
-### 훅
-
-유용한 자동화:
-- 린팅/포매팅 훅
-- 보안 검사
-- 유효성 검증 훅
-- 알림 훅
-
-### 규칙
-
-항상 따라야 하는 가이드라인:
-- 보안 규칙
-- 코드 스타일 규칙
-- 테스트 요구사항
-- 네이밍 컨벤션
-
-### MCP 설정
-
-새로운 또는 개선된 MCP 서버 설정:
-- 데이터베이스 연동
-- 클라우드 공급자 MCP
-- 모니터링 도구
-- 커뮤니케이션 도구
+| 폴더 | 내용 | 형식 |
+|------|------|------|
+| `agents/` | 서브에이전트 시스템 프롬프트 | YAML frontmatter + Markdown |
+| `skills/` | 워크플로우 및 도메인 지식 | `.md` 또는 디렉토리 내 `SKILL.md` |
+| `commands/` | 슬래시 커맨드 | YAML frontmatter + Markdown |
+| `rules/` | 항상 로드되는 가이드라인 | Markdown |
+| `hooks/` | 트리거 기반 자동화 | JSON |
 
 ---
 
 ## 기여 방법
 
-### 1. 저장소 포크
+### 1. 브랜치 생성
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/everything-claude-code.git
-cd everything-claude-code
+git checkout -b feat/my-contribution
 ```
 
-### 2. 브랜치 생성
+### 2. 파일 추가/수정
 
-```bash
-git checkout -b add-python-reviewer
-```
+적절한 디렉토리에 파일을 배치합니다.
 
-### 3. 기여 내용 추가
+### 3. 형식 준수
 
-적절한 디렉토리에 파일 배치:
-- `agents/` 새 에이전트
-- `skills/` 스킬 (단일 .md 또는 디렉토리)
-- `commands/` 슬래시 커맨드
-- `rules/` 규칙 파일
-- `hooks/` 훅 설정
-- `mcp-configs/` MCP 서버 설정
-
-### 4. 형식 준수
-
-**에이전트**는 프론트매터가 있어야 합니다:
+**에이전트** (`agents/*.md`):
 
 ```markdown
 ---
@@ -92,28 +42,22 @@ tools: Read, Grep, Glob, Bash
 model: sonnet
 ---
 
-지시사항...
+시스템 프롬프트 지시사항...
 ```
 
-**스킬**은 명확하고 실행 가능해야 합니다:
+**스킬** (`skills/*.md` 또는 `skills/*/SKILL.md`):
 
 ```markdown
 # 스킬 이름
 
 ## 사용 시점
-
 ...
 
 ## 작동 방식
-
-...
-
-## 예시
-
 ...
 ```
 
-**커맨드**는 하는 일을 설명해야 합니다:
+**커맨드** (`commands/*.md`):
 
 ```markdown
 ---
@@ -125,32 +69,30 @@ description: 커맨드의 간단한 설명
 상세 지시사항...
 ```
 
-**훅**은 설명을 포함해야 합니다:
+### 4. 문서 동기화
 
-```json
-{
-  "matcher": "...",
-  "hooks": [...],
-  "description": "이 훅이 하는 일"
-}
-```
+파일을 추가/제거했다면:
+- `CLAUDE.md` 저장소 구조 섹션 업데이트
+- `README.md` 구조 트리 업데이트
 
-### 5. 기여 내용 테스트
-
-제출 전에 Claude Code에서 설정이 작동하는지 확인하세요.
-
-### 6. PR 제출
+### 5. 커밋 및 PR
 
 ```bash
 git add .
-git commit -m "Python 코드 리뷰어 에이전트 추가"
-git push origin add-python-reviewer
+git commit -m "feat: SPARTA 검수 체크리스트 추가"
+git push origin feat/my-contribution
 ```
 
-그런 다음 PR을 열어서:
-- 무엇을 추가했는지
-- 왜 유용한지
-- 어떻게 테스트했는지
+커밋 메시지는 [Conventional Commits](https://www.conventionalcommits.org/) 형식을 따릅니다:
+`feat`, `fix`, `refactor`, `docs`, `test`, `chore`
+
+---
+
+## 파일 네이밍 규칙
+
+- 소문자 + 하이픈: `sparta-design-creator.md`
+- 설명적으로: `sparta-review-checklist.md` > `checklist.md`
+- 에이전트/스킬 이름과 파일명 일치
 
 ---
 
@@ -158,34 +100,19 @@ git push origin add-python-reviewer
 
 ### 해야 할 것
 
-- 설정을 집중적이고 모듈화된 상태로 유지
-- 명확한 설명 포함
-- 제출 전 테스트
-- 기존 패턴 따르기
-- 의존성 문서화
+- 모든 문서는 한국어로 작성
+- 기존 패턴을 따르기 (에이전트 → `agents/code-reviewer.md` 참고)
+- 제출 전 Claude Code에서 동작 확인
+- 변경 내역을 `CLAUDE.md`에 반영
 
 ### 하지 말아야 할 것
 
-- 민감한 데이터 포함 (API 키, 토큰, 경로)
-- 지나치게 복잡하거나 특수한 설정 추가
+- 민감한 데이터 포함 (API 키, 토큰, 비밀번호)
 - 테스트하지 않은 설정 제출
 - 중복 기능 생성
-- 대안 없이 특정 유료 서비스가 필요한 설정 추가
 
 ---
 
-## 파일 네이밍
+## 크레딧
 
-- 소문자와 하이픈 사용: `python-reviewer.md`
-- 설명적으로: `tdd-workflow.md`가 `workflow.md`보다 좋음
-- 에이전트/스킬 이름과 파일명 일치
-
----
-
-## 질문이 있으신가요?
-
-이슈를 열거나 X에서 연락하세요: [@affaanmustafa](https://x.com/affaanmustafa)
-
----
-
-기여해 주셔서 감사합니다. 함께 훌륭한 리소스를 만들어 갑시다.
+범용 에이전트/스킬/커맨드 원본: [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code)

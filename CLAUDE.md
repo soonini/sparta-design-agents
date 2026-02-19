@@ -13,8 +13,11 @@ PDF 브랜드 가이드라인을 실무 수준의 상세 스펙으로 변환하�
 sparta-design-agents/
 ├── agents/          # SPARTA 디자인 에이전트 (Phase 4에서 생성)
 ├── skills/
-│   └── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
+│   ├── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
+│   ├── sparta-review-checklist.md        # 검수 체크리스트 (Phase 2 완료)
+│   └── sparta-design-guideline.md        # 통합 가이드라인 (Phase 3 완료)
 ├── commands/        # 슬래시 커맨드 (Phase 5에서 생성)
+├── feedback/        # 피드백 루프 데이터 (Phase 6에서 생성)
 ├── CLAUDE.md        # 이 파일
 ├── PLAN.md          # 구현 플랜 (팀 공유용)
 ├── HANDOVER.md      # 인수인계서
@@ -66,12 +69,13 @@ sparta-design-agents/
 
 ### 완료 (SPARTA 브랜드 시스템)
 - [x] Phase 1: `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리)
+- [x] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)
+- [x] Phase 3: `skills/sparta-design-guideline.md` (통합 가이드라인)
 
 ### 다음 단계 (SPARTA 브랜드 시스템)
-- [ ] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)
-- [ ] Phase 3: `skills/sparta-design-guideline.md` (통합 가이드라인)
 - [ ] Phase 4: `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md`
 - [ ] Phase 5: `commands/sparta-design.md` + `commands/sparta-review.md`
+- [ ] Phase 6: `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` (피드백 루프)
 
 ## 컨텍스트 윈도우 주의
 

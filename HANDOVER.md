@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 1 완료, Phase 2 대기
+## 현재 상태: Phase 3 완료, Phase 4 대기
 
 ## 완료된 작업
 
@@ -30,6 +30,50 @@
 - **Basic Guide 전체 (p1-79)** + **Application Guide 핵심 (p80-100)** 읽기 완료
 - `skills/sparta-brand-components/SKILL.md` 작성 완료 (~530줄)
 - 포함 내용: 디자인 토큰(컬러/타이포/스페이싱), 로고, 컬러 시스템, 타이포그래피, 키 비주얼 그래픽, 그래픽 에셋, 레이아웃 그리드, UI 컴포넌트, 웹 배너 가이드, CSS 변수 템플릿
+
+### Phase 2: 검수 체크리스트 완료
+- `skills/sparta-review-checklist.md` 작성 완료 (~180줄)
+- 포함 내용:
+  - **심각도 3단계**: CRITICAL / HIGH / MEDIUM
+  - **판정 기준**: PASS / 조건부 PASS / FAIL
+  - **체크리스트 32항목**: 로고 7 + 컬러 5 (CRITICAL) / 타이포 6 + 그래픽 9 (HIGH) / 레이아웃 5 (MEDIUM)
+  - **검수 리포트 형식**: 판정 요약 + 항목별 상세 결과 템플릿
+  - **검수 프로세스**: 순서, 재검수 규칙, 예외 처리(AMBIGUOUS/EXEMPTED 태그)
+  - **피드백 루프 연계**: 모호 영역/새 위반 유형 발견 시 피드백 루프에 보고
+
+### Phase 3: 통합 가이드라인 완료
+- `skills/sparta-design-guideline.md` 작성 완료 (~330줄)
+- 포함 내용:
+  - **콘텐츠 유형별 적용**: TYPE-A/B/C 판별 기준, 텍스트 하이어라키, 서체 매핑
+  - **레이아웃 포맷별 적용**: Mini Banner/Flex/Story-AD/Feed 각각의 배치 규칙, ASCII 다이어그램 포함
+  - **브랜드별 분기**: 4개 브랜드의 톤, 로고 크기, 콘텐츠 타입, 캐릭터 사용 차이
+  - **DO/DON'T**: 로고/컬러/타이포/그래픽/레이아웃 5개 영역 실무 규칙
+  - **HTML/CSS 생성 규칙**: 단일 .html, CSS 변수 참조, placeholder, 포맷별 권장 크기
+  - **제작 워크플로우**: 5단계 (요청 분석 → 텍스트 시안 → 사용자 확인 → HTML/CSS 생성 → 셀프 검수)
+  - **의사결정 플로우차트**: 8단계 빠른 참조
+
+### PLAN.md Phase 6 추가
+- 피드백 루프 설계 반영: 로그 스키마, 학습 워크플로우, 분석 메트릭 정의
+- 산출물 목록 업데이트: 스킬 3→4개, 커맨드 2→4개
+- 의존관계 다이어그램에 Phase 6 추가
+
+## 다음 단계
+
+| 순서 | 산출물 | 상태 |
+|------|--------|------|
+| Phase 1 | `skills/sparta-brand-components/SKILL.md` | **완료** |
+| Phase 2 | `skills/sparta-review-checklist.md` | **완료** |
+| Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | **완료** |
+| Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | 대기 |
+| Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
+| Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | 대기 |
+
+### Phase 4 시작 시 할 일
+1. `PLAN.md`의 Phase 4 섹션 참조 (제작 에이전트 + 검수 에이전트)
+2. 검수 에이전트(`agents/sparta-design-reviewer.md`) 먼저 작성 — 검수가 있어야 제작물 검증 가능
+3. 제작 에이전트(`agents/sparta-design-creator.md`) 작성 — 검수 에이전트와 연계
+4. 에이전트 참조 스킬: `sparta-brand-components`, `sparta-design-guideline`, `sparta-review-checklist`
+5. 에이전트 YAML frontmatter 필수: `name`, `description`, `tools`, `model` (opus)
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 
@@ -180,21 +224,6 @@
 #### 8-3. SNS
 - 모바일 기반 환경에 최적화된 시각 정보 구조
 - 브랜드 메시지를 직관적이고 빠르게 전달
-
-## 다음 단계
-
-| 순서 | 산출물 | 상태 |
-|------|--------|------|
-| Phase 1 | `skills/sparta-brand-components/SKILL.md` | **완료** |
-| Phase 2 | `skills/sparta-review-checklist.md` (검수 체크리스트) | 대기 |
-| Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | 대기 |
-| Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | 대기 |
-| Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
-
-### Phase 2 시작 시 할 일
-1. `skills/sparta-brand-components/SKILL.md`를 기반으로 검수 체크리스트 작성
-2. `PLAN.md`의 Phase 2 섹션 참조 (심각도 정의, 체크리스트 영역, 판정 기준)
-3. PDF를 다시 읽을 필요 없음 — 아래 "PDF 리딩 요약"에 모든 스펙 포함
 
 ## 알려진 이슈
 

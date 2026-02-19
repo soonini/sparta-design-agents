@@ -12,7 +12,8 @@ PDF 브랜드 가이드라인을 실무 수준의 상세 스펙으로 변환하�
 ```
 sparta-design-agents/
 ├── agents/          # SPARTA 디자인 에이전트 (Phase 4에서 생성)
-├── skills/          # 브랜드 스펙 및 가이드라인 (Phase 1~3에서 생성)
+├── skills/
+│   └── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
 ├── commands/        # 슬래시 커맨드 (Phase 5에서 생성)
 ├── CLAUDE.md        # 이 파일
 ├── PLAN.md          # 구현 플랜 (팀 공유용)
@@ -63,8 +64,8 @@ sparta-design-agents/
 - [x] 프로젝트 문서/구조 정비 (.gitignore, CONTRIBUTING.md, HANDOVER.md 갱신)
 - [x] 범용 에이전트/스킬/커맨드/규칙/훅 제거 (SPARTA 전용 레포로 정리)
 
-### 진행 중
-- [ ] Phase 1: `skills/sparta-brand-components/SKILL.md` (PDF 리딩 완료, SKILL.md 작성 대기)
+### 완료 (SPARTA 브랜드 시스템)
+- [x] Phase 1: `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리)
 
 ### 다음 단계 (SPARTA 브랜드 시스템)
 - [ ] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)

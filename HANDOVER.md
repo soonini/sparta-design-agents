@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 1 진행 중 — PDF 리딩 완료, SKILL.md 작성 대기
+## 현재 상태: Phase 1 완료, Phase 2 대기
 
 ## 완료된 작업
 
@@ -26,11 +26,10 @@
 - brand-guidelines, design-system-patterns, create-design-system-rules
 - `.agents/skills/`에 설치됨 (gitignore 대상)
 
-### Phase 1: PDF 리딩 완료
-- **Basic Guide 전체 (p1-79)** 읽기 완료
-- **Application Guide 핵심 섹션 (p80-100)** 읽기 완료
-- `skills/sparta-brand-components/` 디렉토리 생성됨
-- 남은 작업: 추출된 스펙을 `SKILL.md`로 작성
+### Phase 1: 컴포넌트 라이브러리 완료
+- **Basic Guide 전체 (p1-79)** + **Application Guide 핵심 (p80-100)** 읽기 완료
+- `skills/sparta-brand-components/SKILL.md` 작성 완료 (~530줄)
+- 포함 내용: 디자인 토큰(컬러/타이포/스페이싱), 로고, 컬러 시스템, 타이포그래피, 키 비주얼 그래픽, 그래픽 에셋, 레이아웃 그리드, UI 컴포넌트, 웹 배너 가이드, CSS 변수 템플릿
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 
@@ -186,17 +185,16 @@
 
 | 순서 | 산출물 | 상태 |
 |------|--------|------|
-| Phase 1 | `skills/sparta-brand-components/SKILL.md` 작성 | **PDF 리딩 완료, 작성 대기** |
+| Phase 1 | `skills/sparta-brand-components/SKILL.md` | **완료** |
 | Phase 2 | `skills/sparta-review-checklist.md` (검수 체크리스트) | 대기 |
 | Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | 대기 |
 | Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | 대기 |
 | Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
 
-### Phase 1 이어서 할 일
-1. 위 "PDF 리딩 요약" 섹션을 참조하여 `skills/sparta-brand-components/SKILL.md` 작성
-2. PDF를 다시 읽을 필요 없음 — 모든 스펙이 이 문서에 요약되어 있음
-3. SKILL.md 구조는 `PLAN.md`의 Phase 1 섹션 참조
-4. 작성 완료 후 CLAUDE.md 진행 상황 업데이트 + 커밋
+### Phase 2 시작 시 할 일
+1. `skills/sparta-brand-components/SKILL.md`를 기반으로 검수 체크리스트 작성
+2. `PLAN.md`의 Phase 2 섹션 참조 (심각도 정의, 체크리스트 영역, 판정 기준)
+3. PDF를 다시 읽을 필요 없음 — 아래 "PDF 리딩 요약"에 모든 스펙 포함
 
 ## 알려진 이슈
 

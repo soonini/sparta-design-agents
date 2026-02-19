@@ -8,11 +8,11 @@ SPARTA(팀스파르타/스파르타클럽) 브랜드 가이드라인 PDF를 실�
 
 ## 프로젝트 현황
 
-구현 플랜 수립 완료, Phase 1부터 순차 구현 예정. 상세 내용은 [PLAN.md](PLAN.md) 참조.
+Phase 1 완료, Phase 2부터 순차 구현 예정. 상세 내용은 [PLAN.md](PLAN.md) 참조.
 
 | Phase | 산출물 | 상태 |
 |-------|--------|------|
-| 1 | `skills/sparta-brand-components/SKILL.md` — 컴포넌트 라이브러리 | 대기 |
+| 1 | `skills/sparta-brand-components/SKILL.md` — 컴포넌트 라이브러리 | **완료** |
 | 2 | `skills/sparta-review-checklist.md` — 검수 체크리스트 | 대기 |
 | 3 | `skills/sparta-design-guideline.md` — 통합 가이드라인 | 대기 |
 | 4 | `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md` | 대기 |
@@ -25,7 +25,8 @@ SPARTA(팀스파르타/스파르타클럽) 브랜드 가이드라인 PDF를 실�
 ```
 sparta-design-agents/
 |-- agents/          # SPARTA 디자인 에이전트 (Phase 4)
-|-- skills/          # 브랜드 스펙 및 가이드라인 (Phase 1~3)
+|-- skills/
+|   |-- sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (완료)
 |-- commands/        # 슬래시 커맨드 (Phase 5)
 |-- CLAUDE.md        # 프로젝트 지침 및 협업 규칙
 |-- PLAN.md          # 구현 플랜 (팀 공유용)

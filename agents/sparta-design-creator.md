@@ -160,7 +160,8 @@ model: opus
 
 ### Step 5: 셀프 검수
 
-생성된 HTML/CSS 코드를 `sparta-review-checklist.md`의 32개 항목 기준으로 셀프 체크한다.
+생성된 HTML/CSS 코드를 `sparta-review-checklist.md` 기준으로 셀프 체크한다.
+**기술 검수**(32항목)와 **사내 평가 필수 항목**(3항목)을 모두 확인한다.
 
 #### 셀프 검수 절차
 
@@ -173,14 +174,20 @@ model: opus
    - 서체, Weight, Line Height가 위계에 맞는가?
    - Frame/Pattern/Tag 규격이 준수되는가?
 
-3. **수정**: FAIL 항목 발견 시 코드를 수정하고 재확인
+3. **사내 평가 필수 확인** (3항목):
+   - `QUAL-01` 가독성: Body ≥ 14px, Head ≥ 24px, 텍스트-배경 대비 ≥ 4.5:1(본문) / ≥ 3:1(대형), CTA ≥ 44×44px
+   - `QUAL-02` 레이아웃 완성도: 4px 그리드 정렬, 동일 레벨 간격 편차 ≤ 4px, 좌우 마진 차이 ≤ 8px, 타이포 위계 크기 순서
+   - `BRAND-01` 가이드라인 준수: 위 기술 검수에서 FAIL이 아닐 것
 
-4. **결과 보고**: 셀프 검수 결과를 간략히 사용자에게 보고
+4. **수정**: FAIL 항목 발견 시 코드를 수정하고 재확인
+
+5. **결과 보고**: 셀프 검수 결과를 사용자에게 보고
 
 ```markdown
 ### 셀프 검수 결과
-- CRITICAL: 0건 / HIGH: 0건 / MEDIUM: 0건
-- 판정: PASS
+- 기술 검수: CRITICAL 0건 / HIGH 0건 / MEDIUM 0건 → PASS
+- 사내 평가 필수: QUAL-01 PASS / QUAL-02 PASS / BRAND-01 PASS
+- 예상 콘텐츠 등급: 🟢 이상 (정식 등급은 /sparta-review에서 확정)
 ```
 
 FAIL 항목이 있었다면 수정 내역도 함께 보고한다.

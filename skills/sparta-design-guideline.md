@@ -351,7 +351,7 @@ Caption             ← 부가 정보
 
 - `class` 이름은 역할 기반 (`.banner-title`, `.cta-button`, `.graphic-area`)
 - 시맨틱 HTML 사용 (`<header>`, `<main>`, `<footer>` 등)
-- 접근성: `alt` 텍스트(placeholder에도), `lang="ko"`, 충분한 색상 대비
+- 접근성: `alt` 텍스트(placeholder에도), `lang="ko"`, 충분한 색상 대비 (본문 ≥ 4.5:1, 대형 텍스트 ≥ 3:1 — WCAG AA)
 - 주석으로 레이어 구조 표시:
 
 ```html
@@ -421,9 +421,18 @@ Caption             ← 부가 정보
 ### Step 5: 셀프 검수
 
 생성된 코드를 `sparta-review-checklist.md` 기준으로 셀프 체크:
+
+**기술 검수 (32항목):**
 - CRITICAL 항목 (로고 + 컬러) 전수 확인
 - HIGH 항목 (타이포 + 그래픽) 확인
 - FAIL 항목 발견 시 코드 수정 후 재확인
+
+**사내 평가 필수 항목 (3항목):**
+- `QUAL-01` 가독성: 폰트 크기(Body ≥ 14px, Head ≥ 24px), 명도 대비(본문 ≥ 4.5:1), CTA 터치 영역(≥ 44×44px)
+- `QUAL-02` 레이아웃 완성도: 4px 그리드, 간격 일관성(편차 ≤ 4px), 여백 균형(좌우 차이 ≤ 8px)
+- `BRAND-01` 가이드라인 준수: 기술 검수 FAIL이 아닐 것
+
+사내 평가 필수 항목이 FAIL이면 🔴 미달 등급이므로 반드시 수정한다.
 
 ---
 

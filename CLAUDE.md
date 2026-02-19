@@ -18,7 +18,9 @@ sparta-design-agents/
 │   ├── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
 │   ├── sparta-review-checklist.md        # 검수 체크리스트 (Phase 2 완료)
 │   └── sparta-design-guideline.md        # 통합 가이드라인 (Phase 3 완료)
-├── commands/        # 슬래시 커맨드 (Phase 5에서 생성)
+├── commands/
+│   ├── sparta-design.md   # /sparta-design 제작 커맨드 (Phase 5 완료)
+│   └── sparta-review.md   # /sparta-review 검수 커맨드 (Phase 5 완료)
 ├── feedback/        # 피드백 루프 데이터 (Phase 6에서 생성)
 ├── CLAUDE.md        # 이 파일
 ├── PLAN.md          # 구현 플랜 (팀 공유용)
@@ -77,8 +79,10 @@ sparta-design-agents/
 ### 완료 (SPARTA 에이전트)
 - [x] Phase 4: `agents/sparta-design-reviewer.md` (검수 에이전트) + `agents/sparta-design-creator.md` (제작 에이전트)
 
+### 완료 (SPARTA 커맨드)
+- [x] Phase 5: `commands/sparta-design.md` + `commands/sparta-review.md`
+
 ### 다음 단계 (SPARTA 브랜드 시스템)
-- [ ] Phase 5: `commands/sparta-design.md` + `commands/sparta-review.md`
 - [ ] Phase 6: `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` (피드백 루프)
 
 ## 컨텍스트 윈도우 주의

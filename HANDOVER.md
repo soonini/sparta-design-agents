@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 4 완료, Phase 5 대기
+## 현재 상태: Phase 5 완료, Phase 6 대기
 
 ## 완료된 작업
 
@@ -74,6 +74,19 @@
   - Figma 스펙 요약 출력 형식
   - 참조 스킬: sparta-brand-components, sparta-design-guideline, sparta-review-checklist
 
+### Phase 5: 슬래시 커맨드 완료
+- `commands/sparta-design.md` 작성 완료 (~40줄)
+  - YAML frontmatter: description
+  - 참조 파일 4개 로드 지시 (3 스킬 + 1 에이전트)
+  - `agents/sparta-design-creator.md`의 5단계 워크플로우 연동
+  - 사용 예시 3가지
+- `commands/sparta-review.md` 작성 완료 (~40줄)
+  - YAML frontmatter: description
+  - 참조 파일 3개 로드 지시 (2 스킬 + 1 에이전트)
+  - `agents/sparta-design-reviewer.md`의 5단계 워크플로우 연동
+  - 판정 기준 테이블 포함
+  - 사용 예시 3가지
+
 ## 다음 단계
 
 | 순서 | 산출물 | 상태 |
@@ -82,14 +95,15 @@
 | Phase 2 | `skills/sparta-review-checklist.md` | **완료** |
 | Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | **완료** |
 | Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | **완료** |
-| Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
+| Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | **완료** |
 | Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | 대기 |
 
-### Phase 5 시작 시 할 일
-1. `PLAN.md`의 Phase 5 섹션 참조 (슬래시 커맨드 2개)
-2. `commands/sparta-design.md` — `/sparta-design [설명]`으로 제작 에이전트 호출
-3. `commands/sparta-review.md` — `/sparta-review [이미지경로]`로 검수 에이전트 호출
-4. 커맨드 YAML frontmatter: `description` 필수
+### Phase 6 시작 시 할 일
+1. `PLAN.md`의 Phase 6 섹션 참조 (피드백 루프)
+2. `skills/sparta-feedback-loop.md` — 피드백 수집/분석 규칙, 로그 스키마, 학습 루프 정의
+3. `commands/sparta-feedback.md` — `/sparta-feedback [코멘트]`로 피드백 제출
+4. `commands/sparta-learn.md` — `/sparta-learn`으로 축적 피드백 분석 및 개선 제안
+5. `feedback/` 디렉토리: `log.jsonl` + `SUMMARY.md` 초기 구조 생성
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 

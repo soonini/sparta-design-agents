@@ -11,7 +11,9 @@ PDF 브랜드 가이드라인을 실무 수준의 상세 스펙으로 변환하�
 
 ```
 sparta-design-agents/
-├── agents/          # SPARTA 디자인 에이전트 (Phase 4에서 생성)
+├── agents/
+│   ├── sparta-design-creator.md   # 제작 에이전트 (Phase 4 완료)
+│   └── sparta-design-reviewer.md  # 검수 에이전트 (Phase 4 완료)
 ├── skills/
 │   ├── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
 │   ├── sparta-review-checklist.md        # 검수 체크리스트 (Phase 2 완료)
@@ -72,8 +74,10 @@ sparta-design-agents/
 - [x] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)
 - [x] Phase 3: `skills/sparta-design-guideline.md` (통합 가이드라인)
 
+### 완료 (SPARTA 에이전트)
+- [x] Phase 4: `agents/sparta-design-reviewer.md` (검수 에이전트) + `agents/sparta-design-creator.md` (제작 에이전트)
+
 ### 다음 단계 (SPARTA 브랜드 시스템)
-- [ ] Phase 4: `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md`
 - [ ] Phase 5: `commands/sparta-design.md` + `commands/sparta-review.md`
 - [ ] Phase 6: `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` (피드백 루프)
 

@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 3 완료, Phase 4 대기
+## 현재 상태: Phase 4 완료, Phase 5 대기
 
 ## 완료된 작업
 
@@ -57,6 +57,23 @@
 - 산출물 목록 업데이트: 스킬 3→4개, 커맨드 2→4개
 - 의존관계 다이어그램에 Phase 6 추가
 
+### Phase 4: 에이전트 구현 완료
+- `agents/sparta-design-reviewer.md` 작성 완료 (~150줄)
+  - YAML frontmatter: name, description, tools(Read/Glob/Grep/Bash/WebFetch), model(opus)
+  - 5단계 검수 워크플로우: 대상 식별 → CRITICAL → HIGH → MEDIUM → 판정/리포트
+  - 32개 체크리스트 항목별 확인 내용 상세 기술
+  - 검수 리포트 형식 (판정 요약 + 항목별 PASS/FAIL + 수정 방안)
+  - HTML 파일 추가 확인 항목 (CSS 변수, CDN, placeholder, 레이어 주석)
+  - 재검수, 예외 처리(AMBIGUOUS/EXEMPTED/NEW 태그) 규칙
+- `agents/sparta-design-creator.md` 작성 완료 (~170줄)
+  - YAML frontmatter: name, description, tools(Read/Write/Edit/Glob/Grep/Bash), model(opus)
+  - 5단계 제작 워크플로우: 요청 분석 → 텍스트 시안 → 사용자 확인 → HTML/CSS 생성 → 셀프 검수
+  - 의사결정 플로우차트 8단계 연동
+  - HTML/CSS 생성 규칙 (단일 파일, CSS 변수, placeholder, 레이어 주석, 포맷별 크기)
+  - 셀프 검수 절차 (CRITICAL → HIGH 순서, FAIL 시 수정 후 재확인)
+  - Figma 스펙 요약 출력 형식
+  - 참조 스킬: sparta-brand-components, sparta-design-guideline, sparta-review-checklist
+
 ## 다음 단계
 
 | 순서 | 산출물 | 상태 |
@@ -64,16 +81,15 @@
 | Phase 1 | `skills/sparta-brand-components/SKILL.md` | **완료** |
 | Phase 2 | `skills/sparta-review-checklist.md` | **완료** |
 | Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | **완료** |
-| Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | 대기 |
+| Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | **완료** |
 | Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
 | Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | 대기 |
 
-### Phase 4 시작 시 할 일
-1. `PLAN.md`의 Phase 4 섹션 참조 (제작 에이전트 + 검수 에이전트)
-2. 검수 에이전트(`agents/sparta-design-reviewer.md`) 먼저 작성 — 검수가 있어야 제작물 검증 가능
-3. 제작 에이전트(`agents/sparta-design-creator.md`) 작성 — 검수 에이전트와 연계
-4. 에이전트 참조 스킬: `sparta-brand-components`, `sparta-design-guideline`, `sparta-review-checklist`
-5. 에이전트 YAML frontmatter 필수: `name`, `description`, `tools`, `model` (opus)
+### Phase 5 시작 시 할 일
+1. `PLAN.md`의 Phase 5 섹션 참조 (슬래시 커맨드 2개)
+2. `commands/sparta-design.md` — `/sparta-design [설명]`으로 제작 에이전트 호출
+3. `commands/sparta-review.md` — `/sparta-review [이미지경로]`로 검수 에이전트 호출
+4. 커맨드 YAML frontmatter: `description` 필수
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 

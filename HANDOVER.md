@@ -257,9 +257,13 @@
 
 ## 알려진 이슈
 
-- GitHub 원격 레포 연결 미완료 (로컬에서만 작업 중)
-- SPARTA 브랜드 PDF 2종은 프로젝트 루트에 있으나 `.gitignore`로 제외됨 (별도 공유 필요)
-- Application Guide p101-130 (SNS 나머지, Online Profile, Office Item, Goods)은 미읽음 — 오프라인/물리 제작물이므로 Phase 1에 불필요
+(현재 알려진 이슈 없음)
+
+## 해결된 이슈
+
+- [x] ~~GitHub 원격 레포 연결 미완료~~ → `origin` 연결 완료 + 전체 push 완료 (2026-02-20)
+- [x] ~~PDF 공유 방법 미정~~ → README.md "3. 브랜드 PDF 원본" 섹션에 안내 완료
+- [x] ~~Application Guide p101-132 미읽음~~ → 전체 읽기 완료 (2026-02-20). Office Item(명함/종이백/봉투) + Goods(유니폼/뱃지/에코백/스티커) — 모두 오프라인/물리 제작물. 디지털 디자인 스킬에 반영할 새 규격 없음
 
 ## 참고 자료
 

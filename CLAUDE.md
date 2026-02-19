@@ -36,6 +36,7 @@ sparta-design-agents/
 - 불필요한 파일 재읽기 금지 - 이미 읽은 내용은 컨텍스트에서 참조
 - 병렬 처리 가능한 작업은 반드시 병렬 실행
 - 긴 출력보다 핵심만 요약
+- **컨텍스트 소진 임박 시**: 작업을 계속하지 말고 → HANDOVER.md 업데이트 → 커밋 → 중단. 작업 손실 방지가 최우선
 
 ### 2. CLAUDE.md 업데이트
 - 새 파일 추가/제거 시 저장소 구조 섹션 업데이트
@@ -62,8 +63,10 @@ sparta-design-agents/
 - [x] 프로젝트 문서/구조 정비 (.gitignore, CONTRIBUTING.md, HANDOVER.md 갱신)
 - [x] 범용 에이전트/스킬/커맨드/규칙/훅 제거 (SPARTA 전용 레포로 정리)
 
+### 진행 중
+- [ ] Phase 1: `skills/sparta-brand-components/SKILL.md` (PDF 리딩 완료, SKILL.md 작성 대기)
+
 ### 다음 단계 (SPARTA 브랜드 시스템)
-- [ ] Phase 1: `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리)
 - [ ] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)
 - [ ] Phase 3: `skills/sparta-design-guideline.md` (통합 가이드라인)
 - [ ] Phase 4: `agents/sparta-design-creator.md` + `agents/sparta-design-reviewer.md`

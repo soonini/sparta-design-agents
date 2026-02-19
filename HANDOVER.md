@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: 프로젝트 정리 완료, 구현 대기
+## 현재 상태: Phase 1 진행 중 — PDF 리딩 완료, SKILL.md 작성 대기
 
 ## 완료된 작업
 
@@ -26,22 +26,183 @@
 - brand-guidelines, design-system-patterns, create-design-system-rules
 - `.agents/skills/`에 설치됨 (gitignore 대상)
 
-## 다음 단계
+### Phase 1: PDF 리딩 완료
+- **Basic Guide 전체 (p1-79)** 읽기 완료
+- **Application Guide 핵심 섹션 (p80-100)** 읽기 완료
+- `skills/sparta-brand-components/` 디렉토리 생성됨
+- 남은 작업: 추출된 스펙을 `SKILL.md`로 작성
 
-상세 내용은 `PLAN.md` 참조.
+## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
+
+다음 세션에서 SKILL.md 작성 시 아래 요약을 기반으로 작업. PDF를 다시 읽을 필요 없음.
+
+### 1. 로고 (Basic Guide p10-20)
+- **4개 브랜드**: Team Sparta, Sparta Club, Sparta Builders, Sparta 기업교육
+- **2가지 타입**: Primary Type (가로형) + Stacked Type (세로형)
+- **최소 크기**: Primary 22-24px, Stacked 45-56px (브랜드별 상이)
+- **여백 규정**: T자 기반 클리어 스페이스
+- **배치**: Standard (좌상단/우상단) + Extended (중앙/하단 등)
+- **시그니처 마크**: S 아이콘 (독립 사용 가능)
+- **파트너십 로고**: Ongoing(|로 구분), One-Off(X로 구분)
+- **아이덴티티 컬러**: 흰 배경에 빨간 로고, 빨간 배경에 흰 로고
+- **금지 사항 9가지**: 비율 변경, 회전, 그림자, 아웃라인, 색상 변경, 패턴, 배경 위 가독성 부족, 요소 분리, 다른 그래픽 결합
+
+### 2. 컬러 (Basic Guide p21-31)
+- **메인 컬러**: Sparta Red `#FA0030`, Deep Red `#850028`, Sparta Blue `#93E6F5`
+- **확장 팔레트** (각 5단계):
+  - Red: `#FFAAF0` → `#FF82D2` → `#EB2844` → `#AA002A` → `#730023`
+  - Blue: `#8CEBFF` → `#00D2E6` → `#0096EB` → `#005F9B` → `#003773`
+  - Purple: `#DCA5FF` → `#D773FF` → `#9646FF` → `#6400C3` → `#320073`
+  - Grayscale: White `#FFFFFF` → `#F5F5F5` → `#E0E0E0` → `#999999` → `#666666` → `#333333` → Black `#000000`
+- **컬러 셋**: Accent + Text + Background 조합
+- **최대 3색 규칙**: 한 디자인에 3색 이하 사용
+- **Primary Pairing**: 8가지 조합
+- **Secondary Pairing**: 4가지 조합
+- **Extended Pairing**: 16가지 조합
+- **로고+배경 조합**: 16가지 승인된 조합
+
+### 3. 타이포그래피 (Basic Guide p32-37)
+- **주 서체**: Pretendard (ExtraBold / Bold / SemiBold / Medium / Regular)
+- **보조 서체**: Sandol Dol (Bold / Medium)
+- **계층 구조**:
+  - Head: 150-250%, ExtraBold, Leading 110%
+  - Title: 100-120%, Bold, Leading 130%
+  - Label: 60%, Bold, Leading 130%
+  - SubTitle: 40-60%, Medium, Leading 140%
+  - Body: 20-40%, Regular, Leading 160%
+  - Body List: 15-20%, Regular, Leading 160%
+  - Caption: 10-15%, Regular, Leading 160%
+- **콘텐츠 타입**:
+  - Marketing A/B: Pretendard 사용
+  - Brand Message A/B: Sandol Dol + Pretendard 조합
+- **금지 사항 9가지**: 장평 변경, 자간 과도, 행간 부족, 지정 외 서체, 그라디언트, 아웃라인, 그림자, 색상 대비 부족, 과도한 굵기 혼합
+
+### 4. 키 비주얼 그래픽 (Basic Guide p38-59)
+
+#### 4-1. 그래픽 모티프
+- **Potential Cube**: 정육면체 아웃라인 기반 육각형 + Bevel (모서리면)
+
+#### 4-2. Frame Type
+- **3가지 유형**: Image Masking / Image Clipping / Text
+- **4-레이어 구조**: Background → Frame → Image → Text/Logo
+- **크롭 가이드**: Basic 125% / Full 150% / Extended (프레임 확장)
+- **최소 3면 노출 규칙**
+
+#### 4-3. Pattern Type
+- **2가지 유형**: Full Pattern / Line Pattern
+- **3-레이어 구조**: Background → Pattern → Text/Logo
+- **방향**: Single / Full (수평/수직)
+- **Full 반복 시 최대 3-4회**, 톤온톤 컬러
+
+#### 4-4. Tag Type
+- **텍스트/카테고리 아이콘** 삽입 가능
+- **3가지 형태**: Square / Hexagon / Signature
+- **비례 가이드**: X-height 기준, 태그 높이 마진 0.3X, 텍스트 높이 0.45X, 갭 0.15X
+
+### 5. 그래픽 에셋 (Basic Guide p60-79)
+
+#### 5-1. UI Icon
+- 육각형 아웃라인 기반, 단순 형태
+- **에셋**: 홈, IT취업(내배캠), 강의, 커뮤니티, 좋아요, 스킬업, AI 부업, 프로필, 알림, 열정
+- 그리드 준수, 추가 제작 시 유관 부서 협의
+- **금지**: 그래픽 요소화, 최소 여백 침범, 복잡한 형태
+
+#### 5-2. Category Icon
+- 3D Bevel 적용, 카테고리 직관 표현
+- **에셋**: 국비강의, 국비취업, 디자인, 자기개발(커리어), 개발, 데이터, AI·GPT, 자격증
+- **제작 가이드**: 좌측 하단 경사각 10°, 우측 하단 경사각 35°
+- **제작 프로세스**: 1) 꼭 변을 그리드에 맞춤 → 2) 직선 연결 → 3) 아이콘 완성 → 4) Bevel 적용
+- **컬러**: Blue, Red, Purple 3가지 중 선택
+- **컬러 사용 비율**: R1(10%) / R2(30%) / R3(50%) / R4(10%) 또는 동일 비율의 P/B 계열
+- **태그 가이드**: 아이콘이 뛰어나오는 듯한 시각 효과, 충돌 시 확장/회전 조정
+- **금지**: 불규칙 조명, 과도한 Bevel, 동일 컬러 반복
+
+#### 5-3. Illustration
+- Bevel 적용 입체 스타일, 콘텐츠 메시지 전달
+- **에셋**: 강의, 내일배움캠프, 데이터1/2/3, 앱 아이콘, 폴더, 내일배움카드, 컴퓨터, 노트북, 완주, 축하, 캘린더, 알람, 긴급 알림
+- **Feature 1**: 모서리면 추가 (Bevel)
+- **Feature 2**: 강조 필요한 경우 핵심 요소를 더 입체화
+- **제작 프로세스**: 1) 기본 형태 입체 → 2) Bevel 면 추가 → 3) 핵심 요소 강조 → 4) 빛과 그림자
+- **컬러 가이드**: Category Icon과 동일 비율 (R/P/B 계열, 약간 다른 배분 — R3=40%, R4=10%, R5=10%)
+- **금지**: 과도한 Bevel, UI 아이콘처럼 기능적 사용, 한 개체에 여러 색상
+
+#### 5-4. Character (르탄이)
+- 스파르타클럽 캐릭터 **르탄이** (Look&Feel)
+- 구성: 얼굴, 몸통, 투구, 투구 위 장식, 망토
+- 그래픽 모티프에서 파생된 육각 프레임을 얼굴 형태에 적용
+- 투구 위 장식은 다양한 감정 표현 역할
+- 주로 **내일배움캠프** 서비스에서 사용자 커뮤니케이션에 활용
+
+### 6. 웹 Look & Feel (Application Guide p82-87)
+- 메인 페이지: 볼드 타이포그래피 + 그래픽 모티프 활용
+- 스크롤 시 잠재력 단어 뒤로 태그 등장 효과
+- 내비게이션: 스크롤 시 상단 플로팅 형태로 전환
+- 마우스 호버 시 일러스트레이션이 입체적 구성으로 전환
+- 모바일 버전: 동일한 디자인 언어를 모바일 환경에 적용
+
+### 7. UI 컴포넌트 (Application Guide p88-92)
+
+#### 7-1. Infographic
+- Graph: 게이지형 (반원 + 카테고리 아이콘 중앙)
+- Charts: 바 차트 (빨간색 계열, Potential Cube 모티프 형태)
+- Progress: 진행률 바 (빨간색 active + 회색 inactive)
+
+#### 7-2. Active Button
+- Carousel: 활성화 시 붉은 도트 인디케이터
+- Tab: 활성 탭은 빨간 텍스트 + 라운드 배경
+- Calendar: 오늘 날짜 = 빨간 육각형 배경 + 흰 텍스트
+
+#### 7-3. Tag
+- 콘텐츠 카드 위 태그 (무료 세미나, 스터디클럽, GPT, 데이터 분석 등)
+- 활성화 시 색상 적용 (빨간 배경 + 흰 텍스트)
+
+### 8. 브랜드 콘텐츠 (Application Guide p93-100)
+
+#### 8-1. Content Guide
+- **3가지 콘텐츠 타입**:
+  - Type A (Content-Driven): 정보 제공, 이해 중심 — #명확한, #신뢰 중심, #정보 구조화
+  - Type B (Action-Driven): 행동 유도, 전환 촉진 — #간결, #시각 강조, #클릭 유도형
+  - Type C (Message-Driven): 브랜드 핵심 메시지 강조 — #Bold, #감정 자극, #인지 우선
+- **텍스트 하이어라키**: Type별 요소 구성이 다름
+  - Content-Driven: Tag → SubTitle → Title → Body → CTA
+  - Action-Driven: Title → SubTitle → CTA
+  - Message-Driven: SubTitle → Title → Caption
+- **레이아웃 포맷**: Layout Grid + Margin/Safe Area + Text Area
+  - 3:2 Mini Banner (Web)
+  - Banner (Web - Flex)
+  - 1:2 (Instagram Story-AD)
+  - 4:5 (Instagram Feed/Pop-Up)
+
+#### 8-2. Web Banner
+- Mini Banner: Head Copy + Sub Copy + TAG + CTA Button + Graphic Area
+- Flex Banner: Head Copy (최대 2줄) + Sub Copy + Graphic Area
+- 텍스트 구조, 그래픽 요소 배치, CTA 구성 원칙 가이드
+
+#### 8-3. SNS
+- 모바일 기반 환경에 최적화된 시각 정보 구조
+- 브랜드 메시지를 직관적이고 빠르게 전달
+
+## 다음 단계
 
 | 순서 | 산출물 | 상태 |
 |------|--------|------|
-| Phase 1 | `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리) | 대기 |
+| Phase 1 | `skills/sparta-brand-components/SKILL.md` 작성 | **PDF 리딩 완료, 작성 대기** |
 | Phase 2 | `skills/sparta-review-checklist.md` (검수 체크리스트) | 대기 |
 | Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | 대기 |
 | Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | 대기 |
 | Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | 대기 |
 
+### Phase 1 이어서 할 일
+1. 위 "PDF 리딩 요약" 섹션을 참조하여 `skills/sparta-brand-components/SKILL.md` 작성
+2. PDF를 다시 읽을 필요 없음 — 모든 스펙이 이 문서에 요약되어 있음
+3. SKILL.md 구조는 `PLAN.md`의 Phase 1 섹션 참조
+4. 작성 완료 후 CLAUDE.md 진행 상황 업데이트 + 커밋
+
 ## 알려진 이슈
 
 - GitHub 원격 레포 연결 미완료 (로컬에서만 작업 중)
 - SPARTA 브랜드 PDF 2종은 프로젝트 루트에 있으나 `.gitignore`로 제외됨 (별도 공유 필요)
+- Application Guide p101-130 (SNS 나머지, Online Profile, Office Item, Goods)은 미읽음 — 오프라인/물리 제작물이므로 Phase 1에 불필요
 
 ## 참고 자료
 

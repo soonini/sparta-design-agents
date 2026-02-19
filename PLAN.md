@@ -46,7 +46,7 @@ SPARTA(팀스파르타/스파르타클럽)의 브랜드 디자인 가이드라�
 
 ## 4. 구현 단계
 
-### Phase 0: 사전 준비
+### Phase 0: 사전 준비/ㅊ
 
 레퍼런스 스킬 설치:
 - `figma/mcp-server-guide@create-design-system-rules` — Figma MCP 도구 활용법

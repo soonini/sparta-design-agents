@@ -43,3 +43,6 @@ node_modules/
 # Personal configs (if any)
 personal/
 private/
+
+# 팀 공유용 임시 문서 (슬랙 초안 등)
+SLACK_MESSAGE.md

@@ -1,6 +1,6 @@
 ---
 name: sparta-review
-description: SPARTA 브랜드 가이드라인 기준 디자인 검수 (PASS/FAIL 판정 + 수정 제안)
+description: SPARTA 브랜드 가이드라인 기준 디자인 검수 (50항목 PASS/FAIL → 신호등 등급 + 수정 제안)
 argument-hint: "[이미지 또는 HTML 파일 경로]"
 disable-model-invocation: true
 ---
@@ -14,28 +14,29 @@ SPARTA 브랜드 디자인 검수를 시작한다. 아래 스킬과 에이전트
 반드시 아래 파일을 순서대로 로드한다:
 
 1. `skills/sparta-brand-components/SKILL.md` — 디자인 토큰, 로고, 컬러, 타이포, 그래픽 규격
-2. `skills/sparta-review-checklist/SKILL.md` — 32개 체크리스트, 심각도, 판정 기준, 사내 평가, 리포트 형식
+2. `skills/sparta-review-checklist/SKILL.md` — 50개 체크리스트, 심각도, 신호등 등급, 리포트 형식
 3. `agents/sparta-design-reviewer.md` — 검수 워크플로우 전체 지침
 
 ## 워크플로우
 
-`agents/sparta-design-reviewer.md`의 7단계 워크플로우를 그대로 따른다:
+`agents/sparta-design-reviewer.md`의 6단계 워크플로우를 그대로 따른다:
 
 1. **대상 식별** — `$ARGUMENTS`로 전달된 파일(이미지 또는 HTML)을 읽고, 브랜드/콘텐츠 타입/포맷/매체를 식별한다.
-2. **CRITICAL 검수** — 로고 7항목(LOGO-01~07) + 컬러 5항목(COLOR-01~05) 전수 검사.
-3. **HIGH 검수** — 타이포 6항목(TYPO-01~06) + 그래픽 9항목(GFX-01~09) 전수 검사.
-4. **MEDIUM 검수** — 레이아웃 5항목(LAYOUT-01~05) 검사.
-5. **기술 검수 판정** — PASS / 조건부 PASS / FAIL 판정.
-6. **사내 평가** — 콘텐츠 등급(🔴/🟡/🟢/😎) 판정.
-7. **리포트 생성** — 기술 검수 + 사내 평가 통합 리포트 출력.
+2. **CRITICAL 검수** — 로고(7) + 컬러(5) + 가독성(4) + 레이아웃 완성도(5) = 21항목 전수 검사.
+3. **HIGH 검수** — 타이포(6) + 그래픽(9) + 몰입도(5) + 브랜드 일관성(4) = 24항목 전수 검사.
+4. **MEDIUM 검수** — 레이아웃 5항목 검사.
+5. **신호등 등급 산출** — CRITICAL/HIGH FAIL 건수 집계 → 🔴/🟡/🟢 결정.
+6. **리포트 생성** — 등급 + 상세 결과 통합 리포트 출력.
 
-## 판정 기준
+## 신호등 등급
 
-| 판정 | 조건 |
+| 등급 | 조건 |
 |------|------|
-| PASS | CRITICAL 0건, HIGH 0건 |
-| 조건부 PASS | CRITICAL 0건, HIGH 1~2건 |
-| FAIL | CRITICAL 1건 이상 또는 HIGH 3건 이상 |
+| 🔴 미달 | CRITICAL 1건 이상 FAIL |
+| 🟡 기본 | CRITICAL 0건, HIGH 1건 이상 FAIL |
+| 🟢 우수 | CRITICAL + HIGH 전부 PASS |
+
+> 😎 미침(p) 등급은 리더가 별도 판단합니다.
 
 ## 사용 예시
 

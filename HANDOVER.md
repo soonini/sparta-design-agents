@@ -2,7 +2,7 @@
 
 > 마지막 업데이트: 2026-02-20
 
-## 현재 상태: Phase 6 완료 — 전체 Phase 완료
+## 현재 상태: 전체 Phase 완료 + 팀 공유 준비 완료
 
 ## 완료된 작업
 
@@ -13,7 +13,7 @@
 ### 범용 설정 제거
 - 범용 에이전트 9개, 스킬 5개, 커맨드 9개, 규칙 8개, 훅 1개 전부 제거
 - 이유: 애플리케이션 코드가 없는 레포에 개발용 도구 불필요, 글로벌 설정과 중복
-- `agents/`, `skills/`, `commands/`는 빈 디렉토리로 유지 (Phase별 산출물 배치용)
+- `agents/`, `skills/`는 빈 디렉토리로 유지 (Phase별 산출물 배치용). `commands/`는 이후 스킬 전환 시 삭제됨
 - `rules/`, `hooks/`는 디렉토리 자체 삭제
 
 ### 문서 정비
@@ -108,6 +108,49 @@
 - `feedback/log.jsonl` 초기 빈 파일 생성
 - `feedback/SUMMARY.md` 초기 템플릿 생성 (누적 통계, TOP 5, 학습 포인트, 개선 이력, 미해결 항목)
 
+### 팀 공유 및 운영 준비
+
+- `PROPOSAL.md` 작성 완료
+  - 배경(목표 · 현실 · 기존 시도 · 전환 계기) → 접근 방식 → 산출물 4종 → 기대 효과 → 오해 방지 → 요청 사항
+  - 핵심 맥락: 검수 기준 충족하는 퍼널 콘텐츠 제작이 목표인데, 결과물 중심 PDF를 해석해서 실무 가이드를 만드는 것 자체가 무의미 → AI 시스템으로 전환
+- `SLACK_MESSAGE.md` 작성 완료
+  - 채널 공유용 (간결) + 리더 DM용 (상세) 2가지 버전
+  - `.gitignore`에 추가하여 git 트래킹 제외 (개인 임시 문서)
+- Notion 페이지 작성 완료 (`3062dc3ef5148067b489e842a67a7a3b`)
+  - 프로젝트명: "스파르타클럽 브랜드 디자인 에이전트"
+  - 비전공자용 쉬운 언어로 전체 내용 재작성
+  - 초안 피드백 요청 callout 포함
+  - 검수 기준 상세 (기술 검수 32항목 + 사내 평가 8항목) 토글로 추가
+  - 신호등 등급 수정 제안 (자동 산출 · 등급별 자동 액션 · 추이 추적) 섹션 추가
+- 사내 평가 체크리스트 통합 완료
+  - 기존 퀄리티/브랜드/그로스 3영역 8항목 + 🔴🟡🟢😎 등급을 에이전트 시스템에 연결
+  - 각 항목에 정량 기준 추가 (폰트 크기, 명도 대비, 그리드 정렬 등)
+  - 수정 파일: review-checklist, design-reviewer, design-creator, design-guideline
+
+### 검수 체계 통합 (이원 → 신호등 단일)
+
+기존 이원 체계(기술 검수 32항목 → PASS/FAIL + 사내 평가 5항목 → 🔴🟡🟢)를 **신호등 단일 체계**로 통합.
+
+**변경 내용:**
+- 기존 사내 평가 항목(QUAL-01~03, BRAND-01~02)을 메인 체크리스트에 통합
+  - QUAL-01(가독성) → 4개 CRITICAL 항목(QUAL-01~04)으로 분리
+  - QUAL-02(레이아웃 완성도) → 5개 CRITICAL 항목(QUAL-05~09)으로 분리
+  - QUAL-03(몰입도) → 5개 HIGH 항목(QUAL-10~14)으로 분리
+  - BRAND-02(일관성) → 4개 HIGH 항목(BRAND-01~04)으로 분리
+  - 구 BRAND-01(가이드라인 준수) → 삭제 (기술 검수 결과 복사라 중복)
+- 😎 항목 3개(혁신성·지표 개선·생산성) → 리더 별도 판단으로 분리
+- 최종 항목 수: CRITICAL 21 + HIGH 24 + MEDIUM 5 = **50항목**
+- 등급: 🔴(CRITICAL FAIL) / 🟡(HIGH FAIL) / 🟢(전부 PASS) / 😎(리더 판단)
+- 결과가 2개(기술 판정 + 등급) → 1개(신호등)로 단순화
+
+**수정 파일 6개:**
+- `skills/sparta-review-checklist/SKILL.md` — 섹션 2(신호등 등급), 섹션 3(QUAL/BRAND 항목 추가), 섹션 7(사내 평가) 삭제
+- `agents/sparta-design-reviewer.md` — Step 2~6 통합 (이원 → 단일), 리포트 형식 통합
+- `agents/sparta-design-creator.md` — Step 5 셀프 검수 통합
+- `skills/sparta-design-guideline/SKILL.md` — Step 5 셀프 검수 통합
+- `skills/sparta-design/SKILL.md` — 항목 수·워크플로우 업데이트
+- `skills/sparta-review/SKILL.md` — 전체 재작성 (7단계 → 6단계, 신호등 등급표)
+
 ## 진행 상황 요약
 
 | 순서 | 산출물 | 상태 |
@@ -120,9 +163,9 @@
 | Phase 6 | `skills/sparta-feedback-loop/SKILL.md` + `skills/sparta-feedback/SKILL.md` + `skills/sparta-learn/SKILL.md` + `feedback/` | **완료** |
 | 스펙 보완 | 에이전트 frontmatter + 스킬 폴더 구조 + 커맨드→스킬 전환 | **완료** |
 
-## 전체 Phase 완료 + 공식 스펙 보완 완료
+## 전체 Phase 완료 + 공식 스펙 보완 완료 + 팀 공유 준비 완료
 
-모든 계획된 Phase(1~6)가 완료되었습니다.
+모든 계획된 Phase(1~6)와 팀 공유 준비가 완료되었습니다.
 
 ### 공식 스펙 보완 완료 (2026-02-20)
 

@@ -24,9 +24,9 @@ SPARTA(팀스파르타/스파르타클럽)의 브랜드 디자인 가이드라�
 | 파일 | 설명 | 예상 분량 |
 |------|------|-----------|
 | `skills/sparta-brand-components/SKILL.md` | 컴포넌트 라이브러리 (디자인 토큰, 로고, 컬러, 타이포, 그래픽, 레이아웃) | ~600줄 |
-| `skills/sparta-review-checklist.md` | 검수 체크리스트 (심각도별 판정 기준) | ~350줄 |
-| `skills/sparta-design-guideline.md` | 통합 상세 가이드라인 (콘텐츠 유형별 적용 규칙) | ~400줄 |
-| `skills/sparta-feedback-loop.md` | 피드백 수집/분석 규칙, 학습 루프 정의 | ~200줄 |
+| `skills/sparta-review-checklist/SKILL.md` | 검수 체크리스트 (심각도별 판정 기준) | ~350줄 |
+| `skills/sparta-design-guideline/SKILL.md` | 통합 상세 가이드라인 (콘텐츠 유형별 적용 규칙) | ~400줄 |
+| `skills/sparta-feedback-loop/SKILL.md` | 피드백 수집/분석 규칙, 학습 루프 정의 | ~200줄 |
 
 ### 에이전트 (2개)
 
@@ -35,14 +35,14 @@ SPARTA(팀스파르타/스파르타클럽)의 브랜드 디자인 가이드라�
 | `agents/sparta-design-creator.md` | 제작 에이전트: 시안 제안 + HTML/CSS 코드 생성 | opus |
 | `agents/sparta-design-reviewer.md` | 검수 에이전트: 이미지 분석 후 PASS/FAIL 판정 | opus |
 
-### 커맨드 (4개)
+### 액션 스킬 (4개, 슬래시 커맨드)
 
 | 파일 | 사용법 |
 |------|--------|
-| `commands/sparta-design.md` | `/sparta-design [설명]` → 제작 에이전트 호출 |
-| `commands/sparta-review.md` | `/sparta-review [이미지경로]` → 검수 에이전트 호출 |
-| `commands/sparta-feedback.md` | `/sparta-feedback [코멘트]` → 피드백 제출 |
-| `commands/sparta-learn.md` | `/sparta-learn` → 축적 피드백 분석 및 개선 제안 |
+| `skills/sparta-design/SKILL.md` | `/sparta-design [설명]` → 제작 에이전트 호출 |
+| `skills/sparta-review/SKILL.md` | `/sparta-review [이미지경로]` → 검수 에이전트 호출 |
+| `skills/sparta-feedback/SKILL.md` | `/sparta-feedback [코멘트]` → 피드백 제출 |
+| `skills/sparta-learn/SKILL.md` | `/sparta-learn` → 축적 피드백 분석 및 개선 제안 |
 
 ## 4. 구현 단계
 
@@ -137,7 +137,7 @@ PDF 가이드라인에서 추출할 항목:
 - 수정 방안: [구체적 수정 지시]
 ```
 
-### Phase 5: 슬래시 커맨드
+### Phase 5: 슬래시 커맨드 (액션 스킬)
 
 | 커맨드 | 예시 |
 |--------|------|
@@ -160,9 +160,9 @@ feedback/
 
 | 파일 | 역할 |
 |------|------|
-| `skills/sparta-feedback-loop.md` | 피드백 수집/분석 규칙, 로그 스키마, 학습 알고리즘 정의 |
-| `commands/sparta-feedback.md` | `/sparta-feedback` — 팀원이 제작/검수 결과에 피드백 제출 |
-| `commands/sparta-learn.md` | `/sparta-learn` — 축적된 피드백 분석 → 체크리스트/가이드라인 개선 제안 |
+| `skills/sparta-feedback-loop/SKILL.md` | 피드백 수집/분석 규칙, 로그 스키마, 학습 알고리즘 정의 |
+| `skills/sparta-feedback/SKILL.md` | `/sparta-feedback` — 팀원이 제작/검수 결과에 피드백 제출 |
+| `skills/sparta-learn/SKILL.md` | `/sparta-learn` — 축적된 피드백 분석 → 체크리스트/가이드라인 개선 제안 |
 
 **피드백 로그 스키마 (log.jsonl):**
 
@@ -215,12 +215,12 @@ Phase 1                    Phase 2
         └──────┬───────────────┘
                ▼
             Phase 5
-      [슬래시 커맨드 2개]
+      [액션 스킬 (커맨드) 2개]
                │
                ▼
             Phase 6
         [피드백 루프]
-  (스킬 1 + 커맨드 2 + feedback/)
+  (참조 스킬 1 + 액션 스킬 2 + feedback/)
 ```
 
 | 순서 | 파일 | 이유 |
@@ -230,8 +230,8 @@ Phase 1                    Phase 2
 | 3 | `skills/sparta-design-guideline.md` | 스펙을 어떻게 적용하는지의 실무 가이드 |
 | 4 | `agents/sparta-design-reviewer.md` | 검수가 먼저 있어야 제작물 검증 가능 |
 | 5 | `agents/sparta-design-creator.md` | 제작 + 검수 연계 |
-| 6 | `commands/sparta-design.md` + `commands/sparta-review.md` | 슬래시 커맨드 래퍼 |
-| 7 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` | 피드백 수집·분석·학습 루프 |
+| 6 | `skills/sparta-design/SKILL.md` + `skills/sparta-review/SKILL.md` | 액션 스킬 (슬래시 커맨드) |
+| 7 | `skills/sparta-feedback-loop/SKILL.md` + `skills/sparta-feedback/SKILL.md` + `skills/sparta-learn/SKILL.md` | 피드백 수집·분석·학습 루프 |
 
 ## 6. 컨텍스트 윈도우 예산
 
@@ -256,9 +256,11 @@ Phase 1                    Phase 2
 
 ## 8. 참조할 기존 패턴
 
-| 대상 | 참고 파일 |
+> 아래는 원본 오픈소스(affaan-m/everything-claude-code)에서 참고한 패턴. 현재 해당 파일은 삭제됨.
+
+| 대상 | 참고한 파일 |
 |------|-----------|
-| 에이전트 프론트매터 | `agents/code-reviewer.md` |
-| 스킬 디렉토리 구조 | `skills/security-review/SKILL.md` |
-| 커맨드 형식 | `commands/e2e.md` |
-| 검수 리포트 | `agents/code-reviewer.md`의 CRITICAL/HIGH/MEDIUM 형식 |
+| 에이전트 프론트매터 | `agents/code-reviewer.md` (삭제됨) |
+| 스킬 디렉토리 구조 | `skills/security-review/SKILL.md` (삭제됨) |
+| 액션 스킬 형식 | Claude Code 공식 스펙 (`disable-model-invocation`, `argument-hint`) |
+| 검수 리포트 | `agents/code-reviewer.md`의 CRITICAL/HIGH/MEDIUM 형식 (삭제됨) |

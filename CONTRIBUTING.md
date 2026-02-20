@@ -11,8 +11,7 @@ SPARTA 브랜드 디자인 에이전트 시스템에 기여해 주셔서 감사�
 | 폴더 | 내용 | 형식 |
 |------|------|------|
 | `agents/` | SPARTA 디자인 에이전트 시스템 프롬프트 | YAML frontmatter + Markdown |
-| `skills/` | 브랜드 스펙 및 가이드라인 | `.md` 또는 디렉토리 내 `SKILL.md` |
-| `commands/` | 슬래시 커맨드 | YAML frontmatter + Markdown |
+| `skills/` | 브랜드 스펙, 가이드라인, 슬래시 커맨드 | 디렉토리 내 `SKILL.md` + YAML frontmatter |
 
 ---
 
@@ -43,28 +42,31 @@ model: sonnet
 시스템 프롬프트 지시사항...
 ```
 
-**스킬** (`skills/*.md` 또는 `skills/*/SKILL.md`):
+**참조 스킬** (`skills/*/SKILL.md`):
 
 ```markdown
+---
+name: sparta-brand-components
+description: 브랜드 컴포넌트 라이브러리
+user-invocable: false
+---
+
 # 스킬 이름
-
-## 사용 시점
-...
-
-## 작동 방식
 ...
 ```
 
-**커맨드** (`commands/*.md`):
+**액션 스킬 (슬래시 커맨드)** (`skills/*/SKILL.md`):
 
 ```markdown
 ---
-description: 커맨드의 간단한 설명
+name: sparta-design
+description: SPARTA 브랜드 디자인 제작
+disable-model-invocation: true
+argument-hint: "[디자인 설명]"
 ---
 
 # 커맨드 이름
-
-상세 지시사항...
+...
 ```
 
 ### 4. 문서 동기화

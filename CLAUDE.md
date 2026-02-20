@@ -27,10 +27,11 @@ sparta-design-agents/
 │   ├── log.jsonl      # 피드백 누적 저장소 (append-only)
 │   └── SUMMARY.md     # 주기적 분석 결과
 ├── CLAUDE.md        # 이 파일
-├── PLAN.md          # 구현 플랜 (팀 공유용, 역사적 기록)
+├── PLAN.md          # 구현 플랜 (역사적 기록)
 ├── HANDOVER.md      # 인수인계서
-├── README.md
-└── CONTRIBUTING.md
+├── PROPOSAL.md      # 팀 공유용 제안서
+├── README.md        # 사용 설명서
+└── CONTRIBUTING.md  # 기여 가이드
 ```
 
 ## 파일 컨벤션
@@ -98,6 +99,13 @@ sparta-design-agents/
 - [x] 커맨드 → 액션 스킬 전환 (`commands/` → `skills/`) + `disable-model-invocation`, `argument-hint` 추가
 
 ### 전체 Phase 완료
+
+### 완료 (팀 공유 및 운영 준비)
+- [x] `PROPOSAL.md` 작성 (팀 제안서: 배경 · 접근 방식 · 산출물 · 기대 효과 · 오해 방지 · 요청 사항)
+- [x] `SLACK_MESSAGE.md` 작성 (채널 공유용 + 리더 DM용, .gitignore 대상)
+- [x] Notion 페이지 작성 (비전공자용 쉬운 언어, 검수 기준 상세 토글, 신호등 등급 수정 제안 포함)
+- [x] 사내 평가 체크리스트(퀄리티/브랜드/그로스 3영역 8항목 + 🔴🟡🟢😎 등급) 통합
+- [x] 신호등 등급 수정 제안 (자동 산출 · 등급별 자동 액션 · 추이 추적)
 
 ## 컨텍스트 윈도우 주의
 

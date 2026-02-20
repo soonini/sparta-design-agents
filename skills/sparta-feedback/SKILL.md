@@ -1,5 +1,8 @@
 ---
+name: sparta-feedback
 description: SPARTA 브랜드 디자인 피드백 제출 (검수/제작 결과에 대한 의견 기록)
+argument-hint: "[피드백 내용]"
+disable-model-invocation: true
 ---
 
 # /sparta-feedback
@@ -10,8 +13,8 @@ SPARTA 브랜드 디자인에 대한 피드백을 기록한다. 아래 스킬을
 
 반드시 아래 파일을 로드한다:
 
-1. `skills/sparta-feedback-loop.md` — 로그 스키마, 수집 규칙, ID 채번
-2. `skills/sparta-review-checklist.md` — 위반 항목 ID 참조 (violations 필드 작성 시)
+1. `skills/sparta-feedback-loop/SKILL.md` — 로그 스키마, 수집 규칙, ID 채번
+2. `skills/sparta-review-checklist/SKILL.md` — 위반 항목 ID 참조 (violations 필드 작성 시)
 
 ## 워크플로우
 

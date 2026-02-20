@@ -1,14 +1,13 @@
+---
+name: sparta-feedback-loop
+description: SPARTA 브랜드 피드백 수집·분석·학습 시스템. 로그 스키마, 메트릭 정의, 개선안 유형. 피드백 제출(/sparta-feedback)·분석(/sparta-learn) 시 참조.
+user-invocable: false
+---
+
 # SPARTA 브랜드 피드백 루프
 
 > 팀 사용자들의 피드백을 수집·분석하여 가이드라인과 체크리스트를 지속 개선하는 학습 시스템.
 > `/sparta-feedback`으로 피드백 제출, `/sparta-learn`으로 분석 및 개선 제안.
-
-## 사용 시점
-
-- `/sparta-feedback` 커맨드 실행 시 → 피드백 로깅 규칙 참조
-- `/sparta-learn` 커맨드 실행 시 → 분석 알고리즘 및 메트릭 참조
-- `/sparta-review` 검수 완료 후 → 검수 결과 자동 로깅
-- `/sparta-design` 제작 완료 후 → 제작 결과 수동 피드백 가능
 
 ---
 
@@ -124,10 +123,10 @@ FB-{YYYYMMDD}-{NNN}
 
 | 유형 | 트리거 | 대상 파일 |
 |------|--------|-----------|
-| **체크리스트 항목 추가** | `tags`에 `NEW`가 3건 이상 동일 패턴 | `skills/sparta-review-checklist.md` |
-| **체크리스트 항목 강조** | 위반 빈도 TOP 5 항목 | `skills/sparta-review-checklist.md` |
-| **가이드라인 명확화** | 모호 영역 메트릭 > 30% 항목 | `skills/sparta-design-guideline.md` |
-| **DO/DON'T 보강** | 반복 위반 패턴에서 구체적 사례 도출 | `skills/sparta-design-guideline.md` |
+| **체크리스트 항목 추가** | `tags`에 `NEW`가 3건 이상 동일 패턴 | `skills/sparta-review-checklist/SKILL.md` |
+| **체크리스트 항목 강조** | 위반 빈도 TOP 5 항목 | `skills/sparta-review-checklist/SKILL.md` |
+| **가이드라인 명확화** | 모호 영역 메트릭 > 30% 항목 | `skills/sparta-design-guideline/SKILL.md` |
+| **DO/DON'T 보강** | 반복 위반 패턴에서 구체적 사례 도출 | `skills/sparta-design-guideline/SKILL.md` |
 | **컴포넌트 규격 수정** | 실무 적용 불가 피드백 (`general` type) | `skills/sparta-brand-components/SKILL.md` |
 
 ### 3.4 개선안 출력 형식
@@ -166,13 +165,13 @@ FB-{YYYYMMDD}-{NNN}
 ### 1. [체크리스트 항목 추가] 새 항목 제안
 - **근거**: NEW 태그 피드백 N건에서 공통 패턴 발견
 - **제안 항목**: `GFX-10: 설명...`
-- **대상 파일**: `skills/sparta-review-checklist.md`
+- **대상 파일**: `skills/sparta-review-checklist/SKILL.md`
 
 ### 2. [가이드라인 명확화] GFX-02 기준 보강
 - **근거**: 모호 영역 (혼재율 44%)
 - **현재**: "프레임이 잘리더라도 3면 이상 화면에 보여야 함"
 - **제안**: 구체적 수치 또는 예시 추가
-- **대상 파일**: `skills/sparta-design-guideline.md`
+- **대상 파일**: `skills/sparta-design-guideline/SKILL.md`
 ```
 
 ---
@@ -201,7 +200,7 @@ FB-{YYYYMMDD}-{NNN}
 
 ### 5.1 검수 체크리스트 연계
 
-`skills/sparta-review-checklist.md` 5.3절 예외 처리에서 정의된 태그:
+`skills/sparta-review-checklist/SKILL.md` 5.3절 예외 처리에서 정의된 태그:
 
 | 태그 | 발생 시점 | 피드백 루프 동작 |
 |------|-----------|-----------------|

@@ -1,13 +1,13 @@
+---
+name: sparta-brand-components
+description: SPARTA 브랜드 디자인 토큰(컬러/타이포/스페이싱), 로고 규격, 그래픽 에셋, UI 컴포넌트, CSS 변수 템플릿. 디자인 제작·검수 시 수치 기준으로 참조.
+user-invocable: false
+---
+
 # SPARTA 브랜드 컴포넌트 라이브러리
 
 > SPARTA Brand Basic Guide V.1.0 + Application Guide V.1.0 기반
 > 모든 수치와 규칙은 공식 PDF 가이드라인에서 추출됨
-
-## 사용 시점
-
-- 디자인 제작 에이전트가 HTML/CSS를 생성할 때 이 스킬의 토큰과 규칙을 참조
-- 검수 에이전트가 디자인을 검증할 때 이 스킬의 수치를 기준으로 판정
-- 브랜드 일관성이 필요한 모든 디자인 작업에서 참조
 
 ---
 

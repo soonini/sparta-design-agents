@@ -12,23 +12,22 @@ PDF 브랜드 가이드라인을 실무 수준의 상세 스펙으로 변환하�
 ```
 sparta-design-agents/
 ├── agents/
-│   ├── sparta-design-creator.md   # 제작 에이전트 (Phase 4 완료)
-│   └── sparta-design-reviewer.md  # 검수 에이전트 (Phase 4 완료)
-├── commands/
-│   ├── sparta-design.md     # /sparta-design 제작 커맨드 (Phase 5 완료)
-│   ├── sparta-review.md     # /sparta-review 검수 커맨드 (Phase 5 완료)
-│   ├── sparta-feedback.md   # /sparta-feedback 피드백 제출 (Phase 6 완료)
-│   └── sparta-learn.md      # /sparta-learn 피드백 분석 (Phase 6 완료)
+│   ├── sparta-design-creator.md   # 제작 서브에이전트
+│   └── sparta-design-reviewer.md  # 검수 서브에이전트
 ├── skills/
-│   ├── sparta-brand-components/SKILL.md  # 컴포넌트 라이브러리 (Phase 1 완료)
-│   ├── sparta-review-checklist.md        # 검수 체크리스트 (Phase 2 완료)
-│   ├── sparta-design-guideline.md        # 통합 가이드라인 (Phase 3 완료)
-│   └── sparta-feedback-loop.md           # 피드백 루프 스킬 (Phase 6 완료)
+│   ├── sparta-brand-components/SKILL.md   # 참조 스킬: 컴포넌트 라이브러리
+│   ├── sparta-review-checklist/SKILL.md   # 참조 스킬: 검수 체크리스트
+│   ├── sparta-design-guideline/SKILL.md   # 참조 스킬: 통합 가이드라인
+│   ├── sparta-feedback-loop/SKILL.md      # 참조 스킬: 피드백 루프
+│   ├── sparta-design/SKILL.md             # 액션 스킬: /sparta-design
+│   ├── sparta-review/SKILL.md             # 액션 스킬: /sparta-review
+│   ├── sparta-feedback/SKILL.md           # 액션 스킬: /sparta-feedback
+│   └── sparta-learn/SKILL.md              # 액션 스킬: /sparta-learn
 ├── feedback/
 │   ├── log.jsonl      # 피드백 누적 저장소 (append-only)
 │   └── SUMMARY.md     # 주기적 분석 결과
 ├── CLAUDE.md        # 이 파일
-├── PLAN.md          # 구현 플랜 (팀 공유용)
+├── PLAN.md          # 구현 플랜 (팀 공유용, 역사적 기록)
 ├── HANDOVER.md      # 인수인계서
 ├── README.md
 └── CONTRIBUTING.md
@@ -37,10 +36,13 @@ sparta-design-agents/
 ## 파일 컨벤션
 
 - 모든 문서는 한국어로 작성
-- 에이전트: YAML frontmatter 필수 (`name`, `description`, `tools`, `model`)
-- 커맨드: YAML frontmatter 필수 (`description`)
+- 에이전트: YAML frontmatter 필수 (`name`, `description`, `tools`, `model`, `skills`)
+  - `name`: lowercase + hyphen만 사용
+  - `skills`: preload할 참조 스킬 이름 목록
+- 스킬: `skills/<스킬명>/SKILL.md` 폴더 구조 필수
+  - 참조 스킬: `user-invocable: false` 설정
+  - 액션 스킬(슬래시 커맨드): `disable-model-invocation: true` + `argument-hint` 설정
 - 파일명: 소문자 + 하이픈 (`sparta-design-creator.md`)
-- 스킬: 단일 `.md` 또는 디렉토리 내 `SKILL.md`
 
 ## 협업 규칙 (필수 준수)
 
@@ -78,17 +80,22 @@ sparta-design-agents/
 
 ### 완료 (SPARTA 브랜드 시스템)
 - [x] Phase 1: `skills/sparta-brand-components/SKILL.md` (컴포넌트 라이브러리)
-- [x] Phase 2: `skills/sparta-review-checklist.md` (검수 체크리스트)
-- [x] Phase 3: `skills/sparta-design-guideline.md` (통합 가이드라인)
+- [x] Phase 2: `skills/sparta-review-checklist/SKILL.md` (검수 체크리스트)
+- [x] Phase 3: `skills/sparta-design-guideline/SKILL.md` (통합 가이드라인)
 
 ### 완료 (SPARTA 에이전트)
 - [x] Phase 4: `agents/sparta-design-reviewer.md` (검수 에이전트) + `agents/sparta-design-creator.md` (제작 에이전트)
 
-### 완료 (SPARTA 커맨드)
-- [x] Phase 5: `commands/sparta-design.md` + `commands/sparta-review.md`
+### 완료 (SPARTA 스킬 — 슬래시 커맨드)
+- [x] Phase 5: `skills/sparta-design/SKILL.md` + `skills/sparta-review/SKILL.md`
 
 ### 완료 (SPARTA 피드백 루프)
-- [x] Phase 6: `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` + `feedback/` 초기 구조
+- [x] Phase 6: `skills/sparta-feedback-loop/SKILL.md` + `skills/sparta-feedback/SKILL.md` + `skills/sparta-learn/SKILL.md` + `feedback/` 초기 구조
+
+### 완료 (공식 스펙 보완)
+- [x] 에이전트 frontmatter 스펙 준수 (`name` lowercase, `skills` preload, `tools` comma-separated)
+- [x] 스킬 폴더 구조 전환 (단일 `.md` → `폴더/SKILL.md`) + YAML frontmatter 추가
+- [x] 커맨드 → 액션 스킬 전환 (`commands/` → `skills/`) + `disable-model-invocation`, `argument-hint` 추가
 
 ### 전체 Phase 완료
 

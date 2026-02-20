@@ -113,15 +113,32 @@
 | 순서 | 산출물 | 상태 |
 |------|--------|------|
 | Phase 1 | `skills/sparta-brand-components/SKILL.md` | **완료** |
-| Phase 2 | `skills/sparta-review-checklist.md` | **완료** |
-| Phase 3 | `skills/sparta-design-guideline.md` (통합 가이드라인) | **완료** |
+| Phase 2 | `skills/sparta-review-checklist/SKILL.md` | **완료** |
+| Phase 3 | `skills/sparta-design-guideline/SKILL.md` (통합 가이드라인) | **완료** |
 | Phase 4 | `agents/sparta-design-reviewer.md` + `agents/sparta-design-creator.md` | **완료** |
-| Phase 5 | `commands/sparta-design.md` + `commands/sparta-review.md` | **완료** |
-| Phase 6 | `skills/sparta-feedback-loop.md` + `commands/sparta-feedback.md` + `commands/sparta-learn.md` + `feedback/` | **완료** |
+| Phase 5 | `skills/sparta-design/SKILL.md` + `skills/sparta-review/SKILL.md` | **완료** |
+| Phase 6 | `skills/sparta-feedback-loop/SKILL.md` + `skills/sparta-feedback/SKILL.md` + `skills/sparta-learn/SKILL.md` + `feedback/` | **완료** |
+| 스펙 보완 | 에이전트 frontmatter + 스킬 폴더 구조 + 커맨드→스킬 전환 | **완료** |
 
-## 전체 Phase 완료
+## 전체 Phase 완료 + 공식 스펙 보완 완료
 
 모든 계획된 Phase(1~6)가 완료되었습니다.
+
+### 공식 스펙 보완 완료 (2026-02-20)
+
+Claude Code 공식 문서(sub-agents, skills, features-overview) 기준으로 전체 파일을 검토·보완.
+
+**에이전트 변경점:**
+- `name` 필드: 한국어 → lowercase+hyphen (`sparta-design-creator`, `sparta-design-reviewer`)
+- `tools` 필드: YAML 배열 → comma-separated 문자열 (공식 예제 형식)
+- `skills` 필드 추가: 참조 스킬 preload (서브에이전트 실행 시 자동 주입)
+- `description` 개선: 자동 위임 트리거를 위한 사용 시점 명시
+
+**스킬 변경점:**
+- 단일 `.md` → `폴더/SKILL.md` 구조로 전환 (3개 파일 이동)
+- 4개 참조 스킬에 YAML frontmatter 추가 (`name`, `description`, `user-invocable: false`)
+- `commands/` 4개 → `skills/` 액션 스킬 4개로 전환 (`disable-model-invocation: true`, `argument-hint`)
+- `commands/` 디렉토리 삭제
 
 ### 사내 평가 체크리스트 통합 완료
 
@@ -130,10 +147,10 @@
 **설계 방식**: 기술 검수(32항목) + 사내 평가(8항목)를 이원 체계로 운영. 검수 리포트에 기술 판정 + 콘텐츠 등급 병기.
 
 **수정 파일 4개**:
-- `skills/sparta-review-checklist.md` — 섹션 7 추가 (~120줄): 등급 정의, 8항목 정량 기준(폰트 크기·명도 대비·그리드·간격·정보 밀도 등), 리포트 형식
+- `skills/sparta-review-checklist/SKILL.md` — 섹션 7 추가 (~120줄): 등급 정의, 8항목 정량 기준(폰트 크기·명도 대비·그리드·간격·정보 밀도 등), 리포트 형식
 - `agents/sparta-design-reviewer.md` — Step 6(사내 평가) + Step 7(리포트 생성) 추가, 리포트에 사내 평가 테이블 포함
 - `agents/sparta-design-creator.md` — Step 5 셀프 검수에 사내 평가 필수 3항목(QUAL-01, QUAL-02, BRAND-01) 추가
-- `skills/sparta-design-guideline.md` — Step 5 셀프 검수에 사내 평가 필수 항목 + 접근성 WCAG AA 기준 명시
+- `skills/sparta-design-guideline/SKILL.md` — Step 5 셀프 검수에 사내 평가 필수 항목 + 접근성 WCAG AA 기준 명시
 
 ## Phase 1 PDF 리딩 요약 (다음 세션에서 참조)
 

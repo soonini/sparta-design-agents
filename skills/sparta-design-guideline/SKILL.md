@@ -1,13 +1,13 @@
+---
+name: sparta-design-guideline
+description: SPARTA 브랜드 디자인 제작 실무 규칙. 콘텐츠 유형별/포맷별/브랜드별 적용 가이드, DO/DON'T, HTML/CSS 생성 규칙, 의사결정 플로우차트. 디자인 제작 시 참조.
+user-invocable: false
+---
+
 # SPARTA 브랜드 통합 디자인 가이드라인
 
 > 제작 에이전트가 디자인을 생성할 때 참조하는 실무 적용 규칙.
-> 컴포넌트 라이브러리(`sparta-brand-components/SKILL.md`)의 토큰과 규칙을 **어떻게** 조합하는지를 정의한다.
-
-## 사용 시점
-
-- 제작 에이전트(`agents/sparta-design-creator.md`)가 시안을 구성할 때
-- HTML/CSS 코드를 생성할 때 구조와 규칙 참조
-- 콘텐츠 타입·포맷·브랜드에 따른 분기 판단이 필요할 때
+> sparta-brand-components 스킬의 토큰과 규칙을 **어떻게** 조합하는지를 정의한다.
 
 ---
 
